@@ -17,7 +17,7 @@
   @media (prefers-reduced-motion:reduce){*{animation:none!important}}
   @media (prefers-reduced-motion:reduce){.ic{opacity:.9}.up{opacity:1}.rule{stroke-dashoffset:0}}</style>
 <rect x=".5" y=".5" width="431" height="249" rx="4" fill="#F7F1EA" stroke="#D9D0C6"/>
-<text class="n up" x="28" y="40" style="animation-delay:0.27s">06</text>
+<text class="n up" x="28" y="40" style="animation-delay:0.27s">04</text>
 <g transform="translate(271.4 34)" aria-hidden="true"><text class="ic" xml:space="preserve" x="0" y="0" style="animation-delay:0.42s">  ┌───┬───┬───┐  </text><text class="ic pulse" xml:space="preserve" x="0" y="17" style="animation-delay:0.51s,2.27s">  │░░░│ ◆ │░░░│  </text><text class="ic" xml:space="preserve" x="0" y="34" style="animation-delay:0.60s">  ├───┼───┼───┤  </text><text class="ic" xml:space="preserve" x="0" y="51" style="animation-delay:0.69s">  │░░░│░░░│░░░│  </text><text class="ic" xml:space="preserve" x="0" y="68" style="animation-delay:0.78s">  └───┴───┴───┘  </text></g>
 <text class="ti up" x="28" y="146" style="animation-delay:0.62s">Shadowkeep</text>
 <line class="rule" x1="28" y1="162" x2="404" y2="162" stroke="#D9D0C6"/>

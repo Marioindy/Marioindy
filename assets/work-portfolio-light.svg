@@ -6,9 +6,9 @@
   @keyframes type{0%{opacity:0;clip-path:inset(0 100% 0 0)}100%{opacity:.9;clip-path:inset(0 0 0 0)}}
   .up{opacity:0;animation:up 1.1s cubic-bezier(.2,.8,.2,1) both}
   @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  .pulse{animation:pulse 3.2s cubic-bezier(.2,.8,.2,1) 2.27s infinite}
+  .pulse{animation:pulse 3.2s cubic-bezier(.2,.8,.2,1) 2.15s infinite}
   @keyframes pulse{0%,100%{opacity:.9}50%{opacity:.35}}
-  .rule{stroke-dasharray:432;stroke-dashoffset:432;animation:rule 1.2s cubic-bezier(.2,.8,.2,1) 0.27s forwards}
+  .rule{stroke-dasharray:432;stroke-dashoffset:432;animation:rule 1.2s cubic-bezier(.2,.8,.2,1) 0.15s forwards}
   @keyframes rule{to{stroke-dashoffset:0}}
   .n{font:400 13px 'PF','Playfair Display',Georgia,serif;fill:#726663;font-variant-numeric:lining-nums}
   .ti{font:500 25px 'PF','Playfair Display',Georgia,serif;letter-spacing:-.4px;fill:#2B1B1B}
@@ -17,11 +17,11 @@
   @media (prefers-reduced-motion:reduce){*{animation:none!important}}
   @media (prefers-reduced-motion:reduce){.ic{opacity:.9}.up{opacity:1}.rule{stroke-dashoffset:0}}</style>
 <rect x=".5" y=".5" width="431" height="249" rx="4" fill="#F7F1EA" stroke="#D9D0C6"/>
-<text class="n up" x="28" y="40" style="animation-delay:0.27s">04</text>
-<g transform="translate(271.4 34)" aria-hidden="true"><text class="ic" xml:space="preserve" x="0" y="0" style="animation-delay:0.42s">  ┌───────────┐  </text><text class="ic pulse" xml:space="preserve" x="0" y="17" style="animation-delay:0.51s,2.27s">  │ ○ ○ ○     │  </text><text class="ic" xml:space="preserve" x="0" y="34" style="animation-delay:0.60s">  ├───────────┤  </text><text class="ic" xml:space="preserve" x="0" y="51" style="animation-delay:0.69s">  │ ▁▂▃▅▇ ░░░ │  </text><text class="ic" xml:space="preserve" x="0" y="68" style="animation-delay:0.78s">  └───────────┘  </text></g>
-<text class="ti up" x="28" y="146" style="animation-delay:0.62s">Portfolio Website</text>
+<text class="n up" x="28" y="40" style="animation-delay:0.15s">03</text>
+<g transform="translate(271.4 34)" aria-hidden="true"><text class="ic" xml:space="preserve" x="0" y="0" style="animation-delay:0.30s">  ┌───────────┐  </text><text class="ic pulse" xml:space="preserve" x="0" y="17" style="animation-delay:0.39s,2.15s">  │ ○ ○ ○     │  </text><text class="ic" xml:space="preserve" x="0" y="34" style="animation-delay:0.48s">  ├───────────┤  </text><text class="ic" xml:space="preserve" x="0" y="51" style="animation-delay:0.57s">  │ ▁▂▃▅▇ ░░░ │  </text><text class="ic" xml:space="preserve" x="0" y="68" style="animation-delay:0.66s">  └───────────┘  </text></g>
+<text class="ti up" x="28" y="146" style="animation-delay:0.50s">Portfolio Website</text>
 <line class="rule" x1="28" y1="162" x2="404" y2="162" stroke="#D9D0C6"/>
-<text class="b up" x="28" y="188" style="animation-delay:0.77s">Interactive portfolio: blog, project</text>
-<text class="b up" x="28" y="207" style="animation-delay:0.82s">showcase, contact form, chatbot.</text>
-<text class="lab up" x="28" y="232" style="animation-delay:0.97s">PUBLIC  ·  NEXT.JS  ·  GSAP  ·  CONVEX</text>
+<text class="b up" x="28" y="188" style="animation-delay:0.65s">Interactive portfolio: blog, project</text>
+<text class="b up" x="28" y="207" style="animation-delay:0.70s">showcase, contact form, chatbot.</text>
+<text class="lab up" x="28" y="232" style="animation-delay:0.85s">PUBLIC  ·  NEXT.JS  ·  GSAP  ·  CONVEX</text>
 </svg>

@@ -336,11 +336,9 @@ const ICONS = {
 };
 const WORK = [
   { id: "fleet", n: "01", title: "ÆSHE Fleet", line: ["A fleet of named agents that coordinate", "my work, research and teaching."], label: "PRIVATE  ·  PYTHON  ·  AGENTS" },
-  { id: "mcp", n: "02", title: "ÆSHE Fleet MCP", line: ["An authenticated remote Model Context", "Protocol connector for the fleet."], label: "PRIVATE  ·  TYPESCRIPT  ·  WORKERS" },
-  { id: "map", n: "03", title: "Puerto Rico Cargo Map", line: ["Interactive logistics and cargo map", "of Puerto Rico, built mobile-first."], label: "PRIVATE  ·  REACT  ·  MAPS" },
-  { id: "portfolio", n: "04", title: "Portfolio Website", line: ["Interactive portfolio: blog, project", "showcase, contact form, chatbot."], label: "PUBLIC  ·  NEXT.JS  ·  GSAP  ·  CONVEX" },
-  { id: "meal", n: "05", title: "Mood Meal", line: ["Pick a mood, get a meal. Shipped to", "Cloudflare Workers through OpenNext."], label: "PUBLIC  ·  NEXT.JS  ·  CLOUDFLARE" },
-  { id: "dnd", n: "06", title: "Shadowkeep", line: ["Real-time campaign manager: sheets,", "shared maps with fog of war, dice."], label: "PUBLIC  ·  NEXT.JS  ·  CONVEX  ·  EXPO" },
+  { id: "map", n: "02", title: "Puerto Rico Cargo Map", line: ["Interactive logistics and cargo map", "of Puerto Rico, built mobile-first."], label: "PRIVATE  ·  REACT  ·  MAPS" },
+  { id: "portfolio", n: "03", title: "Portfolio Website", line: ["Interactive portfolio: blog, project", "showcase, contact form, chatbot."], label: "PUBLIC  ·  NEXT.JS  ·  GSAP  ·  CONVEX" },
+  { id: "dnd", n: "04", title: "Shadowkeep", line: ["Real-time campaign manager: sheets,", "shared maps with fog of war, dice."], label: "PUBLIC  ·  NEXT.JS  ·  CONVEX  ·  EXPO" },
 ];
 
 function workCard(name, w, i) {
