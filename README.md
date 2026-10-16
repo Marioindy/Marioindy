@@ -1,58 +1,38 @@
-<div align="center">
+<a href="#selected-work">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
+  <img src="assets/hero-light.svg" alt="Jesiel Carro. Engineer in Puerto Rico working across AI systems, software, research and teaching. A field of characters decodes into the ÆSHE seal." width="100%">
+</picture>
+</a>
 
-```text
-╔══════════════════════════════════════════════════════════════════════╗
-║  M A R I O I N D Y      /      JESIEL CARRO                          ║
-║  ENGINEERING  ·  AI SYSTEMS  ·  RESEARCH  ·  EDUCATION               ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
-
-### Building useful systems, one commit at a time.
-
-Electrical and computer engineer working across AI, software, research, and teaching in Puerto Rico.
-
-[Projects](#selected-work) · [LinkedIn](https://www.linkedin.com/in/jesielcarro) · [Abstracto](https://abstracto.dev)
-
-</div>
-
----
-
-```text
-  ┌─ CURRENT MODE ──────────────────────────────────────────────────────┐
-  │  `systems`  +  `curiosity`  +  `shipping`                            │
-  │                                                                      │
-  │    design ── build ── test ── learn ── repeat                        │
-  └──────────────────────────────────────────────────────────────────────┘
-```
-
-## Contribution signal
-
-A little pixel creature tracing the work across the year. The animation refreshes daily from GitHub's contribution calendar.
+I build systems that keep working after you stop watching: agents, the infrastructure they run on, and the surfaces people meet them through. Electrical and computer engineer, teaching and researching in Puerto Rico, building under [Abstracto](https://abstracto.dev).
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Marioindy/Marioindy/output/github-contribution-grid-snake-dark.gif">
-  <img alt="Animated snake moving across Jesiel's GitHub contribution calendar" src="https://raw.githubusercontent.com/Marioindy/Marioindy/output/github-contribution-grid-snake.gif" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/calendar-dark.svg">
+  <img src="assets/calendar-light.svg" alt="My public GitHub contribution calendar for the last twelve months, redrawn as an animated picture. The grid rises in a wave, then the active days flash in a slow pass across the year." width="100%">
 </picture>
 
 ## Selected work
 
-| Project | What it does |
-|:--|:--|
-| [D&D Shadowkeep Campaign Manager](https://github.com/Marioindy/dnd-shadowkeep-campaign-manager) | Collaborative tabletop campaign management. |
-| [Portfolio Website](https://github.com/Marioindy/portfolio-website) | Interactive personal portfolio built with Next.js, React, GSAP, Convex, and Tailwind CSS. |
-| [Mood Meal](https://github.com/Marioindy/mood-meal) | Mood-based meal recommendations with Next.js and Cloudflare Workers. |
-| [ÆSHE Fleet MCP](https://github.com/Marioindy/AesheFleet-MCP) | Remote MCP connector for the ÆSHE fleet. |
+<a href="#selected-work"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-fleet-dark.svg"><img src="assets/work-fleet-light.svg" alt="01, ÆSHE Fleet. A fleet of named agents that coordinate my work, research and teaching. Private, Python." width="49%"></picture></a>
+<a href="#selected-work"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-mcp-dark.svg"><img src="assets/work-mcp-light.svg" alt="02, ÆSHE Fleet MCP. An authenticated remote Model Context Protocol connector for the fleet. Private, TypeScript." width="49%"></picture></a>
+<a href="#selected-work"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-map-dark.svg"><img src="assets/work-map-light.svg" alt="03, Puerto Rico Cargo Map. Interactive logistics and cargo map of the island. Private, React." width="49%"></picture></a>
+<a href="https://github.com/Marioindy/portfolio-website"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-portfolio-dark.svg"><img src="assets/work-portfolio-light.svg" alt="04, Portfolio Website. Interactive portfolio with blog, project showcase, contact form and chatbot. Public, Next.js, GSAP, Convex." width="49%"></picture></a>
+<a href="https://github.com/Marioindy/mood-meal"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-meal-dark.svg"><img src="assets/work-meal-light.svg" alt="05, Mood Meal. Pick a mood, get a meal. Public, Next.js on Cloudflare Workers." width="49%"></picture></a>
+<a href="https://github.com/Marioindy/dnd-shadowkeep-campaign-manager"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/work-dnd-dark.svg"><img src="assets/work-dnd-light.svg" alt="06, Shadowkeep. Real-time tabletop campaign manager with character sheets, shared maps with fog of war, and dice. Public, Next.js, Convex, Expo." width="49%"></picture></a>
 
-## Toolkit
+<sub>01 to 03 are private, so they have no links. 04 to 06 open their repositories.</sub>
 
-```text
-  TYPESCRIPT  /  REACT  /  NEXT.JS  /  AI SYSTEMS  /  CLOUDFLARE
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/index-dark.svg">
+  <img src="assets/index-light.svg" alt="For the record. Discipline: electrical and computer engineering. Focus: AI systems, agents, real-time web apps. Languages: TypeScript, JavaScript, Python. Web: React, Next.js, GSAP, Tailwind CSS. Data and edge: Convex, Cloudflare Workers, D1. Rooms: classrooms through labs." width="100%">
+</picture>
 
-<div align="center">
+[LinkedIn](https://www.linkedin.com/in/jesielcarro) · [Abstracto](https://abstracto.dev) · [Repositories](https://github.com/Marioindy?tab=repositories)
 
-```text
-[ KEEP EXPLORING ]  ───────────────────────────────────  PUERTO RICO · 2026
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/ribbon-dark.svg">
+  <img src="assets/ribbon-light.svg" alt="" width="100%">
+</picture>
 
-</div>
+<sub>Every graphic here is an animated SVG drawn by [`scripts/build.mjs`](scripts/build.mjs), no third-party services. The calendar is redrawn daily by a [workflow](.github/workflows/calendar.yml). Motion respects reduced-motion settings.</sub>

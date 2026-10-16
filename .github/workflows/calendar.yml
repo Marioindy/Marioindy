@@ -1,0 +1,48 @@
+name: calendar
+
+# Redraws assets/calendar-{dark,light}.svg from the public contribution calendar.
+# No third-party actions: actions/checkout pinned to a commit, plus the
+# zero-dependency scripts/build.mjs. The committed SVGs are a working snapshot,
+# so the README renders even if this never runs.
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: calendar
+  cancel-in-progress: false
+
+jobs:
+  redraw:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: 22
+
+      - name: Draw calendar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/build.mjs --only calendar
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/calendar-dark.svg assets/calendar-light.svg
+          if git diff --cached --quiet; then
+            echo "calendar unchanged"
+            exit 0
+          fi
+          git commit -m "Redraw contribution calendar"
+          git push
