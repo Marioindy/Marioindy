@@ -26,8 +26,8 @@ const USER = args.user ?? process.env.GITHUB_REPOSITORY_OWNER ?? "Marioindy";
 // ---------------------------------------------------------------- tokens ----
 const BRAND = { ink: "#2B1B1B", paper: "#F7F1EA", canvas: "#E7E4E0", ash: "#726663", oxblood: "#8C2F2F" };
 const THEMES = {
-  dark: { bg: BRAND.ink, fg: BRAND.paper, sub: "#B9ADA5", line: "#4A3A38", field: BRAND.paper },
-  light: { bg: BRAND.paper, fg: BRAND.ink, sub: BRAND.ash, line: "#D9D0C6", field: BRAND.ink },
+  dark: { bg: BRAND.ink, fg: BRAND.paper, sub: "#B9ADA5", subStrong: "#D6CCC5", line: "#4A3A38", field: BRAND.paper },
+  light: { bg: BRAND.paper, fg: BRAND.ink, sub: BRAND.ash, subStrong: "#574B48", line: "#D9D0C6", field: BRAND.ink },
 };
 const EASE = "cubic-bezier(.2,.8,.2,1)";
 const SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,'Helvetica Neue',Arial,sans-serif";
@@ -237,6 +237,9 @@ function calendar(name, data) {
     }
   }
 
+  // A partial first month sits too close to the next label: drop it.
+  if (months.length > 1 && months[1].col - months[0].col < 3) months.shift();
+
   // Entrance: columns rise in a diagonal wave (once). Ambient: a hairline scan
   // crosses the year every 14 s and each active day answers with a short flash.
   const LOOP = 14, SWEEP = 6; // seconds; sweep is the part of the loop spent crossing
@@ -326,6 +329,13 @@ const ICONS = {
     "   ╲         ╱   ",
     "    ╰───────╯    ",
   ],
+  sort: [
+    "  ○ ▢ ○ ▢ ○ ▢    ",
+    "  ═════╤═════════ ",
+    "   ┌───┴───┐      ",
+    "   │ π π π │ ▶ ◆  ",
+    "   └───────┘ ▶ ◇  ",
+  ],
   dnd: [
     "  ┌───┬───┬───┐  ",
     "  │░░░│ ◆ │░░░│  ",
@@ -337,8 +347,9 @@ const ICONS = {
 const WORK = [
   { id: "fleet", n: "01", title: "ÆSHE Fleet", line: ["A fleet of named agents that coordinate", "my work, research and teaching."], label: "PRIVATE  ·  PYTHON  ·  AGENTS" },
   { id: "map", n: "02", title: "Puerto Rico Cargo Map", line: ["Interactive logistics and cargo map", "of Puerto Rico, built mobile-first."], label: "PRIVATE  ·  REACT  ·  MAPS" },
-  { id: "portfolio", n: "03", title: "Portfolio Website", line: ["Interactive portfolio: blog, project", "showcase, contact form, chatbot."], label: "PUBLIC  ·  NEXT.JS  ·  GSAP  ·  CONVEX" },
-  { id: "dnd", n: "04", title: "Shadowkeep", line: ["Real-time campaign manager: sheets,", "shared maps with fog of war, dice."], label: "PUBLIC  ·  NEXT.JS  ·  CONVEX  ·  EXPO" },
+  { id: "sort", n: "03", title: "Plastic Sorting Capstone", line: ["Bottle sorting across three Raspberry Pis:", "YOLO vision, spectral sensing, MQTT."], label: "PRIVATE  ·  CAPSTONE  ·  VISION  ·  MQTT" },
+  { id: "portfolio", n: "04", title: "Portfolio Website", line: ["Interactive portfolio: blog, project", "showcase, contact form, chatbot."], label: "PUBLIC  ·  NEXT.JS  ·  GSAP  ·  CONVEX" },
+  { id: "dnd", n: "05", title: "Shadowkeep", line: ["Real-time campaign manager: sheets,", "shared maps with fog of war, dice."], label: "PUBLIC  ·  NEXT.JS  ·  CONVEX  ·  EXPO" },
 ];
 
 function workCard(name, w, i) {
@@ -355,10 +366,10 @@ function workCard(name, w, i) {
   @keyframes pulse{0%,100%{opacity:.9}50%{opacity:.35}}
   .rule{stroke-dasharray:${W};stroke-dashoffset:${W};animation:rule 1.2s ${EASE} ${base}s forwards}
   @keyframes rule{to{stroke-dashoffset:0}}
-  .n{font:400 13px ${SERIF};fill:${t.sub};font-variant-numeric:lining-nums}
+  .n{font:400 13px ${SERIF};fill:${t.subStrong};font-variant-numeric:lining-nums}
   .ti{font:500 25px ${SERIF};letter-spacing:-.4px;fill:${t.fg}}
-  .b{font:400 13.5px ${SANS};fill:${t.sub}}
-  .lab{font:500 10px ${SANS};letter-spacing:.6px;fill:${t.sub}}
+  .b{font:400 14px ${SANS};fill:${t.subStrong}}
+  .lab{font:600 11px ${SANS};letter-spacing:.6px;fill:${t.subStrong}}
   ${REDUCED}
   @media (prefers-reduced-motion:reduce){.ic{opacity:.9}.up{opacity:1}.rule{stroke-dashoffset:0}}`;
   const iconRows = icon
@@ -373,7 +384,7 @@ function workCard(name, w, i) {
 <style>${css}</style>
 <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="4" fill="${t.bg}" stroke="${t.line}"/>
 <text class="n up" x="28" y="40" style="animation-delay:${base}s">${w.n}</text>
-<g transform="translate(${W - 28 - 17 * 7.8} 34)" aria-hidden="true">${iconRows}</g>
+<g transform="translate(${(W - 28 - Math.max(...icon.map((r) => r.trimEnd().length)) * 7.8).toFixed(1)} 34)" aria-hidden="true">${iconRows}</g>
 <text class="ti up" x="28" y="146" style="animation-delay:${(base + 0.35).toFixed(2)}s">${esc(w.title)}</text>
 <line class="rule" x1="28" y1="162" x2="${W - 28}" y2="162" stroke="${t.line}"/>
 <text class="b up" x="28" y="188" style="animation-delay:${(base + 0.5).toFixed(2)}s">${esc(w.line[0])}</text>
@@ -461,9 +472,9 @@ function ribbon(name) {
 // ================================================================ MAIN =====
 mkdirSync(OUT, { recursive: true });
 const only = args.only;
-const data = await loadCalendar();
+const data = only === "work" ? null : await loadCalendar();
 for (const name of ["dark", "light"]) {
-  write(`calendar-${name}.svg`, calendar(name, data));
+  if (only !== "work") write(`calendar-${name}.svg`, calendar(name, data));
   if (only === "calendar") continue;
   write(`hero-${name}.svg`, hero(name));
   WORK.forEach((w, i) => write(`work-${w.id}-${name}.svg`, workCard(name, w, i)));
